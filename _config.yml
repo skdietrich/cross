@@ -1,0 +1,5 @@
+title: Cross and Swastika
+theme: jekyll-theme-prime
+baseurl: "/cross" 
+# IMPORTANT: Change "/cross" to your ACTUAL repository name if it is different.
+# If your repo is named "book-site", make this "/book-site".
