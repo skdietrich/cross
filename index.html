@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cross and Swastika | Dietrich-Kolokouris</title>
+    <title>Cross and Swastika | Dr. Dietrich-Kolokouris</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 
     <style>
-        /* --- CSS STYLES START HERE --- */
+        /* =========================================
+           1. MUSEUM GRADE CSS STYLES
+           (Gold, Slate, and Blood Red Palette)
+        ========================================= */
         :root {
-            --bg-dark: #121212;
-            --bg-panel: #1e1e1e;
-            --gold-1: #bf953f;
-            --gold-2: #fcf6ba;
-            --gold-3: #b38728;
-            --accent-red: #5e0b0b;
-            --text-main: #e0e0e0;
-            --text-muted: #a0a0a0;
+            --bg-dark: #121212;      /* Dark Slate */
+            --bg-panel: #1e1e1e;     /* Slightly lighter panel */
+            --gold-1: #bf953f;       /* Dark Gold */
+            --gold-2: #fcf6ba;       /* Light Gold */
+            --gold-3: #b38728;       /* Medium Gold */
+            --accent-red: #5e0b0b;   /* Oxblood Red */
+            --text-main: #e0e0e0;    /* Off-white text */
         }
 
         * { box-sizing: border-box; }
@@ -31,7 +33,7 @@
             overflow-x: hidden;
         }
 
-        /* NAVIGATION */
+        /* --- NAVIGATION --- */
         .navbar {
             background-color: rgba(18, 18, 18, 0.98);
             border-bottom: 1px solid #333;
@@ -39,23 +41,28 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.8);
         }
+
         .nav-container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 20px;
         }
+
         .nav-brand {
             font-family: 'Cinzel', serif;
             font-weight: 700;
             color: var(--gold-1);
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
+
         .nav-menu {
             list-style: none;
             display: flex;
@@ -64,40 +71,56 @@
             margin: 0;
             padding: 0;
         }
+
         .nav-item {
             cursor: pointer;
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: color 0.3s;
+            color: #888;
         }
-        .nav-item:hover, .nav-item.active { color: var(--gold-2); }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--gold-2);
+            text-shadow: 0 0 10px rgba(191, 149, 63, 0.5);
+        }
         
         .buy-btn {
             border: 1px solid var(--gold-1);
-            padding: 8px 16px;
+            padding: 10px 20px;
             color: var(--gold-1);
             text-decoration: none;
             text-transform: uppercase;
             font-size: 0.85rem;
+            font-weight: bold;
             transition: 0.3s;
+            letter-spacing: 1px;
         }
-        .buy-btn:hover { background-color: var(--gold-1); color: #000; }
 
-        /* SECTIONS (TABS) */
+        .buy-btn:hover {
+            background-color: var(--gold-1);
+            color: #000;
+        }
+
+        /* --- TABS (Single Page Functionality) --- */
         .page-section {
             display: none; /* Hidden by default */
-            animation: fadeIn 0.8s;
-            min-height: 80vh;
+            animation: fadeIn 0.6s ease-in-out;
+            min-height: 85vh;
+            padding-bottom: 50px;
         }
-        .page-section.active { display: block; } /* Show when active */
+
+        .page-section.active {
+            display: block; /* Show when active */
+        }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* HERO & HOME */
+        /* --- HERO SECTION --- */
         .hero {
             height: 80vh;
             display: flex;
@@ -107,6 +130,8 @@
             background: radial-gradient(circle at center, #2a2a2a 0%, #121212 100%);
             padding: 20px;
         }
+
+        /* The Metallic Gold Text Effect */
         .gold-text {
             font-family: 'Cinzel', serif;
             background: linear-gradient(to right, var(--gold-1), var(--gold-2), var(--gold-3), var(--gold-1));
@@ -114,69 +139,178 @@
             background-clip: text;
             color: transparent;
             background-size: 200% auto;
-            animation: shine 4s linear infinite;
-            font-size: 3.5rem;
-            margin-bottom: 0;
+            animation: shine 5s linear infinite;
+            font-size: 4rem;
+            margin-bottom: 10px;
+            line-height: 1.1;
+            text-transform: uppercase;
         }
+
         @keyframes shine { to { background-position: 200% center; } }
         
+        .hero-sub {
+            color: #a0a0a0;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: 'Lato', sans-serif;
+            margin-top: 0;
+        }
+
+        /* --- BOOK SHOWCASE --- */
         .book-layout {
             display: flex;
             max-width: 900px;
-            margin: -50px auto 50px;
+            margin: -60px auto 60px;
             background: var(--bg-panel);
-            padding: 40px;
-            border-left: 4px solid var(--accent-red);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 50px;
+            border-left: 5px solid var(--accent-red);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
             position: relative;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
         }
+
         .book-img {
-            width: 220px;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.8);
+            width: 240px;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.8);
+            transform: rotate(-2deg);
+            border: 1px solid #333;
         }
 
-        /* GALLERY GRID */
+        /* --- GALLERY GRID (Automatic) --- */
+        .gallery-container-box {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
+            margin-top: 40px;
         }
+
         .gallery-item {
             border: 1px solid #333;
             background: #000;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        .gallery-item:hover { border-color: var(--gold-1); transform: scale(1.02); }
-        .gallery-item img { width: 100%; height: 250px; object-fit: cover; opacity: 0.8; }
-        .gallery-item:hover img { opacity: 1; }
-        .caption { padding: 15px; border-top: 1px solid #333; }
-        .fig-num { font-family: 'Cinzel'; color: var(--gold-1); font-weight: bold; font-size: 0.8rem; }
-        .desc { font-size: 0.9rem; color: #ccc; display: block; margin-top: 5px; }
 
-        /* LIGHTBOX */
+        .gallery-item:hover {
+            border-color: var(--gold-1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: 0.5s;
+            display: block;
+        }
+
+        .gallery-item:hover img {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .caption {
+            padding: 15px;
+            border-top: 1px solid #333;
+            background: #151515;
+        }
+
+        .fig-num {
+            color: var(--gold-1);
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .desc {
+            font-size: 0.9rem;
+            color: #ccc;
+            font-family: 'Lato';
+            line-height: 1.4;
+        }
+
+        /* --- LIGHTBOX OVERLAY --- */
         .lightbox {
-            display: none; position: fixed; top:0; left:0; width:100%; height:100%;
-            background: rgba(0,0,0,0.95); z-index: 2000;
-            align-items: center; justify-content: center; flex-direction: column;
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.96);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
         }
-        .lightbox img { max-width: 90%; max-height: 80vh; border: 2px solid var(--gold-1); }
-        .close-btn { position: absolute; top: 20px; right: 40px; color: #fff; font-size: 50px; cursor: pointer; }
 
-        /* UTILS */
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80vh;
+            border: 2px solid var(--gold-1);
+            box-shadow: 0 0 60px rgba(0,0,0,0.9);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #fff;
+            font-size: 60px;
+            cursor: pointer;
+            line-height: 0.5;
+        }
+
+        .close-btn:hover { color: var(--accent-red); }
+
+        /* --- TEXT UTILITIES --- */
         .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        h2 { font-family: 'Cinzel'; color: var(--gold-1); border-bottom: 1px solid #333; padding-bottom: 10px; }
-        p { line-height: 1.6; color: #d0d0d0; }
         
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-1);
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+            margin-top: 0;
+            font-size: 2rem;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #d0d0d0;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .quote-box {
+            background: #1e1e1e;
+            padding: 30px;
+            border-left: 4px solid var(--gold-1);
+            margin: 40px 0;
+            font-style: italic;
+            color: #fff;
+        }
+
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .book-layout { flex-direction: column; text-align: center; margin-top: 0; }
-            .gold-text { font-size: 2.2rem; }
-            .nav-menu { display: none; } /* Simplified mobile nav for brevity */
+            .gold-text { font-size: 2.5rem; }
+            .book-layout { flex-direction: column; text-align: center; margin-top: 0; padding: 30px 20px; }
+            .nav-menu { display: none; } /* Simplified for mobile */
+            .nav-brand { margin: 0 auto; }
+            .gallery-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -198,95 +332,158 @@
         <header class="hero">
             <div>
                 <h1 class="gold-text">CROSS & SWASTIKA</h1>
-                <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem; margin-top: 10px;">Orthodox Europe and the Waffen-SS</p>
+                <p class="hero-sub">Orthodox Europe and the Waffen-SS</p>
+                <p style="color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;">
+                    Dr. Stephen Dietrich-Kolokouris
+                </p>
             </div>
         </header>
 
         <div class="book-layout">
-            <img src="https://m.media-amazon.com/images/I/71uK-Vj8DCL._SY466_.jpg" class="book-img" alt="Book Cover">
+            <img src="https://m.media-amazon.com/images/I/71uK-Vj8DCL._SY466_.jpg" class="book-img" alt="Cross and Swastika Book Cover">
+            
             <div>
-                <h2 style="color: #e0e0e0; border: none;">Between the Icon and the Iron</h2>
+                <h2 style="color: #e0e0e0; border: none; font-size: 1.8rem;">Between the Icon and the Iron</h2>
                 <p>
                     An unflinching academic investigation into one of World War II's most complex contradictions. 
                     How did the ancient faith of Byzantium intersect with the totalitarian machinery of the SS?
                 </p>
                 <p>
-                    <em>"A necessary addition to the shelf of any serious student of the Eastern Front."</em>
+                    From the Balkans to the Eastern Front, <em>Cross and Swastika</em> uncovers the uncomfortable history 
+                    that has been buried for decades.
                 </p>
                 <br>
-                <a href="https://www.amazon.com/dp/B0FCRYXSST" class="buy-btn" style="background: var(--accent-red); border-color: var(--accent-red); color: white;">Get the Copy</a>
+                <a href="https://www.amazon.com/dp/B0FCRYXSST" class="buy-btn" style="background: var(--accent-red); border-color: var(--accent-red); color: white;">Purchase on Amazon</a>
             </div>
         </div>
         
-        <footer style="text-align: center; padding: 40px; color: #555; font-size: 0.8rem;">
-            <p>Other works: <a href="#" style="color:#777">The American Paranormal</a> | <a href="#" style="color:#777">Chicago Ripper Crew Reboot</a></p>
-            <p>&copy; 2024 Stephen Dietrich-Kolokouris</p>
+        <footer style="text-align: center; padding: 60px 20px; color: #555; font-size: 0.8rem; border-top: 1px solid #222;">
+            <p style="color: #666;">AUTHOR OF: <br><em>The American Paranormal</em> &bull; <em>Chicago Ripper Crew Reboot</em></p>
+            <p>&copy; 2024 Stephen Dietrich-Kolokouris. All Rights Reserved.</p>
         </footer>
     </div>
 
     <div id="research" class="page-section">
-        <div class="container">
+        <div class="container" style="margin-top: 40px;">
             <h2>The Historical Context</h2>
             <p>
                 The 13th Waffen Mountain Division of the SS "Handschar" represents a singular moment in the history of the Second World War. 
                 While much has been written about the political maneuverings of the Grand Mufti of Jerusalem, the complex interplay between 
                 Orthodox Christian populations in the Balkans and the encroaching German war machine remains a subject of intense debate.
             </p>
-            <div style="background: #1e1e1e; padding: 25px; border-left: 3px solid var(--gold-1); margin: 30px 0;">
-                <p style="font-style: italic; margin: 0; color: #fff;">
-                    "To understand the tragedy of the Balkans in the 1940s, one must first understand the collision of religious identity and political desperation..."
-                </p>
+            
+            <div class="quote-box">
+                "To understand the tragedy of the Balkans in the 1940s, one must first understand the collision of religious identity and political desperation..."
             </div>
+            
             <p>
                 This book utilizes primary source documents, never-before-translated recruitment pamphlets, and personal diaries to reconstruct 
-                the atmosphere of 1943-1945.
+                the atmosphere of 1943-1945. It challenges the monolithic view of the SS, revealing a fragmented, opportunistic, and often contradictory organization 
+                operating in the cultural borderlands of Europe.
             </p>
+            <p>
+                <strong>Key Primary Sources Examined:</strong>
+            </p>
+            <ul style="color: #ccc; line-height: 1.8; margin-bottom: 40px;">
+                <li>Divisional Recruitment Records (1943)</li>
+                <li>Orthodox Clergy correspondence from occupied Yugoslavia</li>
+                <li>German High Command (OKW) directives regarding religious accommodation</li>
+            </ul>
         </div>
     </div>
 
     <div id="archives" class="page-section">
-        <div class="container" style="text-align: center; max-width: 1000px;">
-            <h2>The Digital Archives</h2>
-            <p style="margin-bottom: 40px;">Select historical maps and documents referenced in the text.</p>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/13th_Waffen_Mountain_Div_of_SS_Handschar_recruitment_poster.jpg/800px-13th_Waffen_Mountain_Div_of_SS_Handschar_recruitment_poster.jpg" alt="Recruitment Poster">
-                    <div class="caption">
-                        <span class="fig-num">FIG I.</span>
-                        <span class="desc">Handschar Recruitment Poster (1943)</span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Bundesarchiv_Bild_101I-049-1553-11%2C_Jugoslawien%2C_Gro%C3%9Fmufti_von_Jerusalem_bei_bosnischen_SS-Gebirgsj%C3%A4gern.jpg" alt="Troop Inspection">
-                    <div class="caption">
-                        <span class="fig-num">FIG II.</span>
-                        <span class="desc">Inspecting the Troops</span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Territorial_partition_of_Yugoslavia_in_1941.png" alt="Map">
-                    <div class="caption">
-                        <span class="fig-num">FIG III.</span>
-                        <span class="desc">Partition of Yugoslavia (1941)</span>
-                    </div>
-                </div>
+        <div class="gallery-container-box">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2 style="font-size: 2.5rem;">The Digital Archives</h2>
+                <p>
+                    Select historical maps, photographs, and documents referenced in the text. 
+                    Click any item to inspect the details.
+                </p>
             </div>
+            
+            <div class="gallery-grid" id="gallery-container"></div>
         </div>
     </div>
 
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
         <span class="close-btn">&times;</span>
         <img id="lightbox-img" src="">
-        <p id="lightbox-caption" style="color: var(--gold-1); margin-top: 15px; font-family: 'Cinzel';"></p>
+        <p id="lightbox-caption" style="color: var(--gold-1); margin-top: 20px; font-family: 'Cinzel'; font-size: 1.2rem; letter-spacing: 1px;"></p>
     </div>
 
     <script>
-        /* --- JAVASCRIPT LOGIC --- */
+        /* =========================================
+           YOUR PHOTO LIST
+           Add your photos here.
+           Format: { src: "images/filename.jpg", desc: "Caption text" },
+        ========================================= */
+        const myPhotos = [
+            // These 4 are examples. Replace them with your own files.
+            { 
+                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/13th_Waffen_Mountain_Div_of_SS_Handschar_recruitment_poster.jpg/800px-13th_Waffen_Mountain_Div_of_SS_Handschar_recruitment_poster.jpg", 
+                desc: "FIG I. Recruitment Poster (1943)" 
+            },
+            { 
+                src: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Bundesarchiv_Bild_101I-049-1553-11%2C_Jugoslawien%2C_Gro%C3%9Fmufti_von_Jerusalem_bei_bosnischen_SS-Gebirgsj%C3%A4gern.jpg", 
+                desc: "FIG II. Inspecting the Troops" 
+            },
+            { 
+                src: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Territorial_partition_of_Yugoslavia_in_1941.png", 
+                desc: "FIG III. Partition of Yugoslavia (1941)" 
+            },
+            { 
+                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Bundesarchiv_Bild_146-1977-137-20%2C_Bosnische_SS-Freiwillige_beim_Gebet.jpg/800px-Bundesarchiv_Bild_146-1977-137-20%2C_Bosnische_SS-Freiwillige_beim_Gebet.jpg", 
+                desc: "FIG IV. Religious Observance" 
+            },
+            
+            // EXAMPLE OF HOW TO ADD YOUR OWN PHOTOS:
+            // { src: "images/map1.jpg", desc: "Fig V. Tactical Map of the Region" },
+            // { src: "images/photo2.jpg", desc: "Fig VI. Author in Archives" },
+        ];
+
+
+        /* =========================================
+           SYSTEM LOGIC (Do not edit below here)
+        ========================================= */
         
-        // Tab Switching Logic
+        // 1. Render Gallery Automatically
+        const galleryContainer = document.getElementById('gallery-container');
+        
+        myPhotos.forEach((photo, index) => {
+            // Create the card
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            item.onclick = function() { openLightbox(photo.src, photo.desc); };
+
+            // Create the image
+            const img = document.createElement('img');
+            img.src = photo.src;
+            img.alt = photo.desc;
+            img.loading = "lazy"; // Performance boost for many photos
+            
+            // Create the caption box
+            const caption = document.createElement('div');
+            caption.className = 'caption';
+            
+            // Create caption text
+            const figNum = document.createElement('span');
+            figNum.className = 'fig-num';
+            figNum.innerText = "FIG " + (index + 1) + ".";
+
+            const desc = document.createElement('span');
+            desc.className = 'desc';
+            desc.innerText = photo.desc.replace(/FIG [IVX]+\. /, ""); // Clean up caption
+
+            // Assemble
+            caption.appendChild(figNum);
+            caption.appendChild(desc);
+            item.appendChild(img);
+            item.appendChild(caption);
+            galleryContainer.appendChild(item);
+        });
+
+        // 2. Tab Switching Logic
         function switchTab(tabId) {
             // Hide all sections
             document.querySelectorAll('.page-section').forEach(section => {
@@ -299,27 +496,34 @@
             document.querySelectorAll('.nav-item').forEach(item => {
                 item.classList.remove('active');
             });
-            // Find the link that was clicked (approximate logic)
-            event.target.classList.add('active');
+            // Highlight clicked nav item (rough match)
+            if(event && event.target.classList.contains('nav-item')) {
+                event.target.classList.add('active');
+            } else {
+                 // Fallback for brand click
+                 document.querySelector('.nav-item').classList.add('active');
+            }
             
             // Scroll to top
             window.scrollTo(0,0);
         }
 
-        // Lightbox Logic
-        function openLightbox(element) {
+        // 3. Lightbox Logic
+        function openLightbox(src, desc) {
             const lightbox = document.getElementById('lightbox');
-            const imgSrc = element.querySelector('img').src;
-            const captionText = element.querySelector('.desc').innerText;
-            
-            document.getElementById('lightbox-img').src = imgSrc;
-            document.getElementById('lightbox-caption').innerText = captionText;
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-caption').innerText = desc;
             lightbox.style.display = 'flex';
         }
 
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
         }
+        
+        // Close on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") { closeLightbox(); }
+        });
     </script>
 </body>
 </html>
