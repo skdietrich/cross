@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -414,68 +417,57 @@
 
     <script>
         /* =========================================
-           YOUR PHOTO LIST
-           Add your photos here.
-           Format: { src: "images/filename.jpg", desc: "Caption text" },
+           AUTOMATED GITHUB PHOTO SCANNER
+           This Liquid code runs on the server.
+           It finds every file in your 'images' folder
+           and adds it to the list automatically.
         ========================================= */
         const myPhotos = [
-            // These 4 are examples. Replace them with your own files.
-            { 
-                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/13th_Waffen_Mountain_Div_of_SS_Handschar_recruitment_poster.jpg/800px-13th_Waffen_Mountain_Div_of_SS_Handschar_recruitment_poster.jpg", 
-                desc: "FIG I. Recruitment Poster (1943)" 
-            },
-            { 
-                src: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Bundesarchiv_Bild_101I-049-1553-11%2C_Jugoslawien%2C_Gro%C3%9Fmufti_von_Jerusalem_bei_bosnischen_SS-Gebirgsj%C3%A4gern.jpg", 
-                desc: "FIG II. Inspecting the Troops" 
-            },
-            { 
-                src: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Territorial_partition_of_Yugoslavia_in_1941.png", 
-                desc: "FIG III. Partition of Yugoslavia (1941)" 
-            },
-            { 
-                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Bundesarchiv_Bild_146-1977-137-20%2C_Bosnische_SS-Freiwillige_beim_Gebet.jpg/800px-Bundesarchiv_Bild_146-1977-137-20%2C_Bosnische_SS-Freiwillige_beim_Gebet.jpg", 
-                desc: "FIG IV. Religious Observance" 
-            },
-            
-            // EXAMPLE OF HOW TO ADD YOUR OWN PHOTOS:
-            // { src: "images/map1.jpg", desc: "Fig V. Tactical Map of the Region" },
-            // { src: "images/photo2.jpg", desc: "Fig VI. Author in Archives" },
+            {% for image in site.static_files %}
+                {% if image.path contains 'images/' %}
+                {
+                    src: "{{ site.baseurl }}{{ image.path }}",
+                    // This creates a clean caption from the filename
+                    // e.g. "my-map.jpg" becomes "My Map"
+                    desc: "{{ image.name | remove: '.jpg' | remove: '.jpeg' | remove: '.png' | replace: '-', ' ' | replace: '_', ' ' | capitalize }}" 
+                },
+                {% endif %}
+            {% endfor %}
         ];
 
-
         /* =========================================
-           SYSTEM LOGIC (Do not edit below here)
+           SYSTEM LOGIC (Standard)
         ========================================= */
         
-        // 1. Render Gallery Automatically
+        // 1. Render Gallery
         const galleryContainer = document.getElementById('gallery-container');
         
+        // Safety check: ensure photos exist
+        if (myPhotos.length === 0) {
+            console.log("No images found in /images folder.");
+        }
+
         myPhotos.forEach((photo, index) => {
-            // Create the card
             const item = document.createElement('div');
             item.className = 'gallery-item';
             item.onclick = function() { openLightbox(photo.src, photo.desc); };
 
-            // Create the image
             const img = document.createElement('img');
             img.src = photo.src;
-            img.alt = photo.desc;
-            img.loading = "lazy"; // Performance boost for many photos
+            img.loading = "lazy";
             
-            // Create the caption box
             const caption = document.createElement('div');
             caption.className = 'caption';
             
-            // Create caption text
+            // Auto-Numbering (Fig I, Fig II...)
             const figNum = document.createElement('span');
             figNum.className = 'fig-num';
             figNum.innerText = "FIG " + (index + 1) + ".";
 
             const desc = document.createElement('span');
             desc.className = 'desc';
-            desc.innerText = photo.desc.replace(/FIG [IVX]+\. /, ""); // Clean up caption
+            desc.innerText = photo.desc;
 
-            // Assemble
             caption.appendChild(figNum);
             caption.appendChild(desc);
             item.appendChild(img);
@@ -483,47 +475,21 @@
             galleryContainer.appendChild(item);
         });
 
-        // 2. Tab Switching Logic
+        // 2. Tab Logic
         function switchTab(tabId) {
-            // Hide all sections
-            document.querySelectorAll('.page-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            // Show selected section
+            document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
-
-            // Update Nav Highlighting
-            document.querySelectorAll('.nav-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            // Highlight clicked nav item (rough match)
-            if(event && event.target.classList.contains('nav-item')) {
-                event.target.classList.add('active');
-            } else {
-                 // Fallback for brand click
-                 document.querySelector('.nav-item').classList.add('active');
-            }
-            
-            // Scroll to top
             window.scrollTo(0,0);
         }
 
         // 3. Lightbox Logic
         function openLightbox(src, desc) {
-            const lightbox = document.getElementById('lightbox');
+            document.getElementById('lightbox').style.display = 'flex';
             document.getElementById('lightbox-img').src = src;
             document.getElementById('lightbox-caption').innerText = desc;
-            lightbox.style.display = 'flex';
         }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-        }
-        
-        // Close on Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") { closeLightbox(); }
-        });
+        function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
+        document.addEventListener('keydown', e => { if (e.key === "Escape") closeLightbox(); });
     </script>
 </body>
 </html>
