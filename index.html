@@ -8,22 +8,27 @@ layout: null
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cross and Swastika | Dr. Dietrich-Kolokouris</title>
     
+    <meta property="og:title" content="Cross and Swastika | Dr. Stephen Dietrich-Kolokouris">
+    <meta property="og:description" content="Between the Icon and the Iron. An academic investigation into Orthodox Europe and the Waffen-SS.">
+    <meta property="og:image" content="https://skdietrich.github.io/cross/images/cross_&_swastika_cover.png">
+    <meta property="og:url" content="https://skdietrich.github.io/cross/">
+    <meta property="og:type" content="book">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 
     <style>
         /* =========================================
            1. MUSEUM GRADE CSS STYLES
-           (Gold, Slate, and Blood Red Palette)
         ========================================= */
         :root {
-            --bg-dark: #121212;      /* Dark Slate */
-            --bg-panel: #1e1e1e;     /* Slightly lighter panel */
-            --gold-1: #bf953f;       /* Dark Gold */
-            --gold-2: #fcf6ba;       /* Light Gold */
-            --gold-3: #b38728;       /* Medium Gold */
-            --accent-red: #5e0b0b;   /* Oxblood Red */
-            --text-main: #e0e0e0;    /* Off-white text */
+            --bg-dark: #121212;
+            --bg-panel: #1e1e1e;
+            --gold-1: #bf953f;
+            --gold-2: #fcf6ba;
+            --gold-3: #b38728;
+            --accent-red: #5e0b0b;
+            --text-main: #e0e0e0;
         }
 
         * { box-sizing: border-box; }
@@ -36,7 +41,7 @@ layout: null
             overflow-x: hidden;
         }
 
-        /* --- NAVIGATION --- */
+        /* NAVIGATION */
         .navbar {
             background-color: rgba(18, 18, 18, 0.98);
             border-bottom: 1px solid #333;
@@ -101,29 +106,14 @@ layout: null
             letter-spacing: 1px;
         }
 
-        .buy-btn:hover {
-            background-color: var(--gold-1);
-            color: #000;
-        }
+        .buy-btn:hover { background-color: var(--gold-1); color: #000; }
 
-        /* --- TABS (Single Page Functionality) --- */
-        .page-section {
-            display: none; /* Hidden by default */
-            animation: fadeIn 0.6s ease-in-out;
-            min-height: 85vh;
-            padding-bottom: 50px;
-        }
+        /* SECTIONS */
+        .page-section { display: none; animation: fadeIn 0.6s ease-in-out; min-height: 85vh; padding-bottom: 50px; }
+        .page-section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .page-section.active {
-            display: block; /* Show when active */
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- HERO SECTION --- */
+        /* HERO & BOOK COVER */
         .hero {
             height: 80vh;
             display: flex;
@@ -134,7 +124,6 @@ layout: null
             padding: 20px;
         }
 
-        /* The Metallic Gold Text Effect */
         .gold-text {
             font-family: 'Cinzel', serif;
             background: linear-gradient(to right, var(--gold-1), var(--gold-2), var(--gold-3), var(--gold-1));
@@ -148,19 +137,10 @@ layout: null
             line-height: 1.1;
             text-transform: uppercase;
         }
-
         @keyframes shine { to { background-position: 200% center; } }
         
-        .hero-sub {
-            color: #a0a0a0;
-            font-size: 1.2rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-family: 'Lato', sans-serif;
-            margin-top: 0;
-        }
+        .hero-sub { color: #a0a0a0; font-size: 1.2rem; letter-spacing: 3px; text-transform: uppercase; margin-top: 0; }
 
-        /* --- BOOK SHOWCASE --- */
         .book-layout {
             display: flex;
             max-width: 900px;
@@ -174,144 +154,41 @@ layout: null
             align-items: center;
         }
 
+        /* BOOK COVER STYLE */
         .book-img {
-            width: 240px;
+            width: 300px; /* Sizing for your specific file */
             box-shadow: 10px 10px 30px rgba(0,0,0,0.8);
             transform: rotate(-2deg);
             border: 1px solid #333;
         }
 
-        /* --- GALLERY GRID (Automatic) --- */
-        .gallery-container-box {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+        /* GALLERY GRID */
+        .gallery-container-box { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
+        .gallery-item { border: 1px solid #333; background: #000; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .gallery-item:hover { border-color: var(--gold-1); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); z-index: 10; }
+        .gallery-item img { width: 100%; height: 220px; object-fit: cover; opacity: 0.7; transition: 0.5s; display: block; }
+        .gallery-item:hover img { opacity: 1; transform: scale(1.05); }
+        .caption { padding: 15px; border-top: 1px solid #333; background: #151515; }
+        .fig-num { color: var(--gold-1); font-family: 'Cinzel', serif; font-size: 0.75rem; font-weight: bold; display: block; margin-bottom: 5px; }
+        .desc { font-size: 0.9rem; color: #ccc; font-family: 'Lato'; line-height: 1.4; }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .gallery-item {
-            border: 1px solid #333;
-            background: #000;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .gallery-item:hover {
-            border-color: var(--gold-1);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            z-index: 10;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            opacity: 0.7;
-            transition: 0.5s;
-            display: block;
-        }
-
-        .gallery-item:hover img {
-            opacity: 1;
-            transform: scale(1.05);
-        }
-
-        .caption {
-            padding: 15px;
-            border-top: 1px solid #333;
-            background: #151515;
-        }
-
-        .fig-num {
-            color: var(--gold-1);
-            font-family: 'Cinzel', serif;
-            font-size: 0.75rem;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .desc {
-            font-size: 0.9rem;
-            color: #ccc;
-            font-family: 'Lato';
-            line-height: 1.4;
-        }
-
-        /* --- LIGHTBOX OVERLAY --- */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.96);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            backdrop-filter: blur(5px);
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 80vh;
-            border: 2px solid var(--gold-1);
-            box-shadow: 0 0 60px rgba(0,0,0,0.9);
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            color: #fff;
-            font-size: 60px;
-            cursor: pointer;
-            line-height: 0.5;
-        }
-
+        /* LIGHTBOX */
+        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.96); z-index: 2000; align-items: center; justify-content: center; flex-direction: column; backdrop-filter: blur(5px); }
+        .lightbox img { max-width: 90%; max-height: 80vh; border: 2px solid var(--gold-1); box-shadow: 0 0 60px rgba(0,0,0,0.9); }
+        .close-btn { position: absolute; top: 20px; right: 40px; color: #fff; font-size: 60px; cursor: pointer; line-height: 0.5; }
         .close-btn:hover { color: var(--accent-red); }
 
-        /* --- TEXT UTILITIES --- */
+        /* UTILS */
         .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        
-        h2 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold-1);
-            border-bottom: 1px solid #333;
-            padding-bottom: 15px;
-            margin-top: 0;
-            font-size: 2rem;
-        }
+        h2 { font-family: 'Cinzel', serif; color: var(--gold-1); border-bottom: 1px solid #333; padding-bottom: 15px; margin-top: 0; font-size: 2rem; }
+        p { line-height: 1.8; color: #d0d0d0; font-size: 1.1rem; margin-bottom: 20px; }
+        .quote-box { background: #1e1e1e; padding: 30px; border-left: 4px solid var(--gold-1); margin: 40px 0; font-style: italic; color: #fff; }
 
-        p {
-            line-height: 1.8;
-            color: #d0d0d0;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-
-        .quote-box {
-            background: #1e1e1e;
-            padding: 30px;
-            border-left: 4px solid var(--gold-1);
-            margin: 40px 0;
-            font-style: italic;
-            color: #fff;
-        }
-
-        /* Mobile Adjustments */
         @media (max-width: 768px) {
             .gold-text { font-size: 2.5rem; }
             .book-layout { flex-direction: column; text-align: center; margin-top: 0; padding: 30px 20px; }
-            .nav-menu { display: none; } /* Simplified for mobile */
+            .nav-menu { display: none; }
             .nav-brand { margin: 0 auto; }
             .gallery-grid { grid-template-columns: 1fr; }
         }
@@ -331,7 +208,7 @@ layout: null
         </div>
     </nav>
 
-<div id="home" class="page-section active">
+    <div id="home" class="page-section active">
         <header class="hero">
             <div>
                 <h1 class="gold-text">CROSS & SWASTIKA</h1>
@@ -365,8 +242,6 @@ layout: null
             <p>&copy; 2024 Stephen Dietrich-Kolokouris. All Rights Reserved.</p>
         </footer>
     </div>
-        </footer>
-    </div>
 
     <div id="research" class="page-section">
         <div class="container" style="margin-top: 40px;">
@@ -386,9 +261,7 @@ layout: null
                 the atmosphere of 1943-1945. It challenges the monolithic view of the SS, revealing a fragmented, opportunistic, and often contradictory organization 
                 operating in the cultural borderlands of Europe.
             </p>
-            <p>
-                <strong>Key Primary Sources Examined:</strong>
-            </p>
+            <p><strong>Key Primary Sources Examined:</strong></p>
             <ul style="color: #ccc; line-height: 1.8; margin-bottom: 40px;">
                 <li>Divisional Recruitment Records (1943)</li>
                 <li>Orthodox Clergy correspondence from occupied Yugoslavia</li>
@@ -401,12 +274,8 @@ layout: null
         <div class="gallery-container-box">
             <div style="text-align: center; max-width: 800px; margin: 0 auto;">
                 <h2 style="font-size: 2.5rem;">The Digital Archives</h2>
-                <p>
-                    Select historical maps, photographs, and documents referenced in the text. 
-                    Click any item to inspect the details.
-                </p>
+                <p>Select historical maps, photographs, and documents referenced in the text. Click any item to inspect the details.</p>
             </div>
-            
             <div class="gallery-grid" id="gallery-container"></div>
         </div>
     </div>
@@ -420,36 +289,29 @@ layout: null
     <script>
         /* =========================================
            AUTOMATED GITHUB PHOTO SCANNER
-           This Liquid code runs on the server.
-           It finds every file in your 'images' folder
-           and adds it to the list automatically.
         ========================================= */
         const myPhotos = [
             {% for image in site.static_files %}
                 {% if image.path contains 'images/' %}
                 {
                     src: "{{ site.baseurl }}{{ image.path }}",
-                    // This creates a clean caption from the filename
-                    // e.g. "my-map.jpg" becomes "My Map"
-                    desc: "{{ image.name | remove: '.jpg' | remove: '.jpeg' | remove: '.png' | replace: '-', ' ' | replace: '_', ' ' | capitalize }}" 
+                    // Cleans filename to create caption
+                    desc: "{{ image.name | remove: '.jpg' | remove: '.jpeg' | remove: '.png' | replace: '-', ' ' | replace: '_', ' ' | replace: '%20', ' ' | capitalize }}" 
                 },
                 {% endif %}
             {% endfor %}
         ];
 
         /* =========================================
-           SYSTEM LOGIC (Standard)
+           SYSTEM LOGIC
         ========================================= */
-        
-        // 1. Render Gallery
         const galleryContainer = document.getElementById('gallery-container');
         
-        // Safety check: ensure photos exist
-        if (myPhotos.length === 0) {
-            console.log("No images found in /images folder.");
-        }
+        // Remove the book cover from the gallery list so it doesn't show up twice
+        // (Optional safety check)
+        const cleanPhotos = myPhotos.filter(p => !p.src.includes('cross_&_swastika_cover'));
 
-        myPhotos.forEach((photo, index) => {
+        cleanPhotos.forEach((photo, index) => {
             const item = document.createElement('div');
             item.className = 'gallery-item';
             item.onclick = function() { openLightbox(photo.src, photo.desc); };
@@ -461,7 +323,6 @@ layout: null
             const caption = document.createElement('div');
             caption.className = 'caption';
             
-            // Auto-Numbering (Fig I, Fig II...)
             const figNum = document.createElement('span');
             figNum.className = 'fig-num';
             figNum.innerText = "FIG " + (index + 1) + ".";
@@ -477,14 +338,16 @@ layout: null
             galleryContainer.appendChild(item);
         });
 
-        // 2. Tab Logic
         function switchTab(tabId) {
             document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
             window.scrollTo(0,0);
+            
+            // Update nav highlight
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+            if(event && event.target.classList.contains('nav-item')) event.target.classList.add('active');
         }
 
-        // 3. Lightbox Logic
         function openLightbox(src, desc) {
             document.getElementById('lightbox').style.display = 'flex';
             document.getElementById('lightbox-img').src = src;
@@ -495,4 +358,3 @@ layout: null
     </script>
 </body>
 </html>
-
