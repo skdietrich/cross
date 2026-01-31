@@ -8,45 +8,16 @@ layout: null
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Cross and Swastika | Dr. Stephen Dietrich-Kolokouris</title>
-    <meta name="description" content="Between the Icon and the Iron. A historical investigation into the collision of the Orthodox Church and the SS in the Balkans. By Dr. Stephen Dietrich-Kolokouris.">
-    <meta name="keywords" content="Dr. Stephen Dietrich-Kolokouris, Waffen-SS, Orthodox Christianity, Balkans WWII, Handschar Division, Eastern Front History, Military History">
+    <meta name="description" content="Between the Icon and the Iron. A historical investigation into the collision of the Orthodox Church and the SS in the Balkans.">
     <meta name="author" content="Dr. Stephen Dietrich-Kolokouris">
     <link rel="canonical" href="https://skdietrich.github.io/cross/">
-
-    <meta property="og:type" content="book">
-    <meta property="og:title" content="Cross and Swastika | Dr. Stephen Dietrich-Kolokouris">
-    <meta property="og:description" content="A forgotten war. A manipulated faith. The true history of the Orthodox Church and the SS.">
-    <meta property="og:url" content="https://skdietrich.github.io/cross/">
-    <meta property="og:site_name" content="Dr. Dietrich-Kolokouris Archives">
+    
     <meta property="og:image" content="https://skdietrich.github.io/cross/images/cross_&_swastika_cover.png">
+    <meta property="og:title" content="Cross and Swastika | Dr. Dietrich-Kolokouris">
+    <meta property="og:type" content="book">
     
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cross and Swastika | Dr. Dietrich-Kolokouris">
-    <meta name="twitter:description" content="New research on the Orthodox Church and the SS during WWII.">
     <meta name="twitter:image" content="https://skdietrich.github.io/cross/images/cross_&_swastika_cover.png">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Book",
-      "name": "Cross and Swastika: Orthodox Europe and the Waffen-SS",
-      "author": {
-        "@type": "Person",
-        "name": "Dr. Stephen Dietrich-Kolokouris"
-      },
-      "url": "https://skdietrich.github.io/cross/",
-      "image": "https://skdietrich.github.io/cross/images/cross_&_swastika_cover.png",
-      "genre": ["History", "World War II", "Military History", "Religion"],
-      "keywords": "Waffen-SS, Orthodox Church, Balkans, Handschar",
-      "offers": {
-        "@type": "Offer",
-        "price": "14.99", 
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://www.amazon.com/dp/B0FCRYXSST"
-      }
-    }
-    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
@@ -70,34 +41,37 @@ layout: null
         .nav-menu { list-style: none; display: flex; gap: 30px; align-items: center; margin: 0; padding: 0; }
         .nav-item { cursor: pointer; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; color: #888; }
         .nav-item:hover, .nav-item.active { color: var(--gold-2); text-shadow: 0 0 10px rgba(191, 149, 63, 0.5); }
+        
         .buy-btn { border: 1px solid var(--gold-1); padding: 10px 20px; color: var(--gold-1); text-decoration: none; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; transition: 0.3s; letter-spacing: 1px; }
         .buy-btn:hover { background-color: var(--gold-1); color: #000; }
 
-        /* BUTTONS */
+        /* BUTTONS & LAYOUT */
         .btn-group { display: flex; gap: 15px; margin-top: 20px; }
         .listen-btn { border: 1px solid #555; background: transparent; color: #ccc; padding: 12px 24px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; cursor: pointer; transition: 0.3s; }
         .listen-btn:hover { border-color: var(--gold-1); color: var(--gold-1); }
 
-        /* HERO */
-        .page-section { display: none; animation: fadeIn 0.6s ease-in-out; min-height: 85vh; padding-bottom: 50px; }
+        .page-section { display: none; animation: fadeIn 0.8s ease-in-out; min-height: 85vh; padding-bottom: 80px; }
         .page-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .hero { height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle at center, #2a2a2a 0%, #121212 100%); padding: 20px; }
+        .hero { height: 75vh; display: flex; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle at center, #252525 0%, #121212 100%); padding: 20px; }
         .gold-text { font-family: 'Cinzel', serif; background: linear-gradient(to right, var(--gold-1), var(--gold-2), var(--gold-3), var(--gold-1)); -webkit-background-clip: text; background-clip: text; color: transparent; background-size: 200% auto; animation: shine 5s linear infinite; font-size: 4rem; margin-bottom: 10px; line-height: 1.1; text-transform: uppercase; }
         @keyframes shine { to { background-position: 200% center; } }
         .hero-sub { color: #a0a0a0; font-size: 1.2rem; letter-spacing: 3px; text-transform: uppercase; margin-top: 0; }
 
-        .book-layout { display: flex; max-width: 900px; margin: -60px auto 60px; background: var(--bg-panel); padding: 50px; border-left: 5px solid var(--accent-red); box-shadow: 0 20px 50px rgba(0,0,0,0.6); position: relative; gap: 50px; align-items: center; }
-        .book-img { width: 300px; box-shadow: 10px 10px 30px rgba(0,0,0,0.8); transform: rotate(-2deg); border: 1px solid #333; }
+        .book-layout { display: flex; max-width: 900px; margin: -80px auto 60px; background: var(--bg-panel); padding: 50px; border-left: 5px solid var(--accent-red); box-shadow: 0 30px 60px rgba(0,0,0,0.7); position: relative; gap: 50px; align-items: center; }
+        .book-img { width: 300px; box-shadow: 15px 15px 40px rgba(0,0,0,0.8); transform: rotate(-2deg); border: 1px solid #333; transition: transform 0.5s; }
+        .book-img:hover { transform: rotate(0deg) scale(1.02); }
 
-        /* RESEARCH & TIMELINE */
+        /* TIMELINE & TYPOGRAPHY */
         .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
         h2 { font-family: 'Cinzel', serif; color: var(--gold-1); border-bottom: 1px solid #333; padding-bottom: 15px; margin-top: 0; font-size: 2rem; }
         p { line-height: 1.8; color: #d0d0d0; font-size: 1.1rem; margin-bottom: 20px; }
         
         .drop-cap::first-letter { font-family: 'Cinzel', serif; font-size: 4.5rem; float: left; line-height: 0.8; padding-right: 15px; color: var(--gold-1); text-shadow: 2px 2px 0px #000; }
-        .quote-box { background: #181818; padding: 40px; border-left: 4px solid var(--gold-1); margin: 50px 0; font-style: italic; color: #fff; font-family: 'Playfair Display', serif; font-size: 1.3rem; }
+        
+        .quote-box { background: #181818; padding: 40px; border-left: 4px solid var(--gold-1); margin: 50px 0; position: relative; }
+        .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; color: #fff; line-height: 1.6; }
 
         .timeline { position: relative; max-width: 800px; margin: 60px auto; }
         .timeline::after { content: ''; position: absolute; width: 1px; background: #333; top: 0; bottom: 0; left: 20px; }
@@ -106,32 +80,33 @@ layout: null
         .timeline-item:hover .timeline-dot { background: var(--gold-1); box-shadow: 0 0 15px var(--gold-1); }
         .time-date { font-family: 'Cinzel'; color: var(--gold-1); font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; display: block; margin-bottom: 5px; }
 
-        /* GALLERY & UTILS */
+        /* GALLERY */
         .gallery-container-box { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
-        .gallery-item { border: 1px solid #333; background: #000; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; }
-        .gallery-item:hover { border-color: var(--gold-1); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); z-index: 10; }
+        .gallery-item { border: 1px solid #333; background: #000; cursor: pointer; transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .gallery-item:hover { border-color: var(--gold-1); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.6); z-index: 10; }
         .gallery-item img { width: 100%; height: 220px; object-fit: cover; opacity: 0.7; transition: 0.5s; display: block; }
         .gallery-item:hover img { opacity: 1; transform: scale(1.05); }
         .caption { padding: 15px; border-top: 1px solid #333; background: #151515; }
         .fig-num { color: var(--gold-1); font-family: 'Cinzel', serif; font-size: 0.75rem; font-weight: bold; display: block; margin-bottom: 5px; }
         .desc { font-size: 0.9rem; color: #ccc; font-family: 'Lato'; line-height: 1.4; }
-        
-        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.96); z-index: 2000; align-items: center; justify-content: center; flex-direction: column; backdrop-filter: blur(5px); }
-        .lightbox img { max-width: 90%; max-height: 80vh; border: 2px solid var(--gold-1); box-shadow: 0 0 60px rgba(0,0,0,0.9); }
-        .close-btn { position: absolute; top: 20px; right: 40px; color: #fff; font-size: 60px; cursor: pointer; line-height: 0.5; }
-        .close-btn:hover { color: var(--accent-red); }
 
+        /* MODALS */
         .audio-modal { display: none; position: fixed; bottom: 30px; right: 30px; width: 350px; background: rgba(20, 20, 20, 0.95); border: 1px solid var(--gold-1); padding: 20px; z-index: 2000; backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(0,0,0,0.8); border-left: 4px solid var(--accent-red); animation: slideUp 0.5s ease; }
         @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        
+        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.96); z-index: 3000; align-items: center; justify-content: center; flex-direction: column; backdrop-filter: blur(5px); }
+        .lightbox img { max-width: 90%; max-height: 80vh; border: 2px solid var(--gold-1); box-shadow: 0 0 60px rgba(0,0,0,0.9); }
+        .close-btn { position: absolute; top: 20px; right: 40px; color: #fff; font-size: 60px; cursor: pointer; line-height: 0.5; }
 
         @media (max-width: 768px) {
             .gold-text { font-size: 2.5rem; }
             .book-layout { flex-direction: column; text-align: center; margin-top: 0; padding: 30px 20px; }
             .nav-menu { display: none; }
-            .nav-brand { margin: 0 auto; }
-            .gallery-grid { grid-template-columns: 1fr; }
             .btn-group { justify-content: center; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .timeline::after { left: 10px; } .timeline-item { padding-left: 40px; }
+            .audio-modal { width: 90%; left: 5%; right: auto; bottom: 20px; }
         }
     </style>
 </head>
@@ -145,7 +120,7 @@ layout: null
                 <li class="nav-item" onclick="switchTab('research')">The Research</li>
                 <li class="nav-item" onclick="switchTab('archives')">Archives</li>
             </ul>
-            <a href="https://www.amazon.com/dp/B0FCRYXSST" target="_blank" class="buy-btn">Order Book</a>
+            <a href="https://www.amazon.com/dp/B0FCRYXSST" target="_blank" class="buy-btn" style="padding: 8px 16px;">Buy Book</a>
         </div>
     </nav>
 
@@ -194,21 +169,21 @@ layout: null
             </p>
             
             <div class="quote-box">
-                "Between oath and oblivion, there is only what we choose to record."
+                <span class="quote-text">"Between oath and oblivion, there is only what we choose to record."</span>
             </div>
 
             <div style="text-align: center; margin-top: 80px; margin-bottom: 40px;">
                 <h2 style="border: none; font-size: 1.5rem;">Chronology of Conflict</h2>
                 <p style="font-size: 0.9rem; color: #666;">Key events examined in the text</p>
             </div>
-
+            
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <span class="time-date">APRIL 1941</span>
                     <div class="time-content">
                         <strong>Invasion of Yugoslavia</strong><br>
-                        The Axis powers invade and partition the Kingdom of Yugoslavia. The "Independent State of Croatia" (NDH) is established, setting the stage for sectarian violence.
+                        The Kingdom of Yugoslavia is partitioned by Axis powers. The complex religious demographics of the region are immediately weaponized.
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -216,7 +191,7 @@ layout: null
                     <span class="time-date">FEBRUARY 1943</span>
                     <div class="time-content">
                         <strong>Formation of Handschar</strong><br>
-                        Hitler approves the formation of the 13th SS Division. Recruitment begins across Bosnia and Croatia, targeting specific religious demographics.
+                        Himmler approves the formation of the 13th SS Division. Recruitment begins across Bosnia and Croatia.
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -224,7 +199,7 @@ layout: null
                     <span class="time-date">SEPTEMBER 17, 1943</span>
                     <div class="time-content">
                         <strong>The Villefranche Mutiny</strong><br>
-                        While stationed in France, members of the division stage the only mutiny within the SS during the war, capturing the town of Villefranche-de-Rouergue before being suppressed.
+                        While stationed in France, members of the division stage the only mutiny within the SS during the war, capturing the town of Villefranche-de-Rouergue.
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -232,10 +207,11 @@ layout: null
                     <span class="time-date">1944 - 1945</span>
                     <div class="time-content">
                         <strong>Retreat & Dissolution</strong><br>
-                        As the Red Army advances, the division retreats into the Reich. The fragile alliances between religious factions and the German command disintegrate.
+                        As the Red Army advances, the fragile alliances between religious factions and the German command disintegrate.
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -252,7 +228,7 @@ layout: null
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
         <span class="close-btn">&times;</span>
         <img id="lightbox-img" src="">
-        <p id="lightbox-caption" style="color: var(--gold-1); margin-top: 20px; font-family: 'Cinzel'; font-size: 1.2rem; letter-spacing: 1px;"></p>
+        <p id="lightbox-caption" style="color: var(--gold-1); margin-top: 20px; font-family: 'Cinzel'; font-size: 1.2rem;"></p>
     </div>
 
     <div id="audio-player" class="audio-modal">
@@ -260,7 +236,7 @@ layout: null
             <span style="color: var(--gold-1); font-family: 'Cinzel'; font-size: 0.9rem;">AUDIO EXCERPT</span>
             <span onclick="toggleAudio()" style="cursor: pointer; color: #fff;">&times;</span>
         </div>
-        <p style="font-size: 0.8rem; color: #ccc; margin-bottom: 10px;">Introduction: A Forgotten War</p>
+        <p style="font-size: 0.8rem; color: #ccc; margin-bottom: 10px;">Reading from Chapter 1: The Invasion</p>
         <audio controls style="width: 100%; height: 30px;">
             <source src="audio/excerpt.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
@@ -268,48 +244,45 @@ layout: null
     </div>
 
     <script>
-        /* AUTOMATED PHOTO SCANNER */
+        /* PHOTO AUTOMATION - SAFE MODE */
         const myPhotos = [
             {% for image in site.static_files %}
                 {% if image.path contains 'images/' %}
                 {
                     src: "{{ site.baseurl }}{{ image.path }}",
-                    // Cleans filename for caption
                     desc: "{{ image.name | remove: '.jpg' | remove: '.jpeg' | remove: '.png' | replace: '-', ' ' | replace: '_', ' ' | replace: '%20', ' ' | capitalize }}" 
                 },
                 {% endif %}
             {% endfor %}
         ];
 
-        /* LOGIC */
+        /* APP LOGIC - FILTERS OUT PDFs and EPUBs */
         const galleryContainer = document.getElementById('gallery-container');
-        // Filter out book cover from gallery to avoid duplication
-        const cleanPhotos = myPhotos.filter(p => !p.src.includes('cross_&_swastika_cover'));
+        
+        // Allowed image extensions
+        const validExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
+
+        // Filter: Must be an image AND not the book cover
+        const cleanPhotos = myPhotos.filter(p => {
+            const lowerSrc = p.src.toLowerCase();
+            const isImage = validExtensions.some(ext => lowerSrc.endsWith(ext));
+            const isNotCover = !lowerSrc.includes('cross_&_swastika_cover');
+            return isImage && isNotCover;
+        });
 
         cleanPhotos.forEach((photo, index) => {
             const item = document.createElement('div');
             item.className = 'gallery-item';
             item.onclick = function() { openLightbox(photo.src, photo.desc); };
-
+            
             const img = document.createElement('img');
-            img.src = photo.src;
-            img.loading = "lazy";
+            img.src = photo.src; img.loading = "lazy";
             
             const caption = document.createElement('div');
             caption.className = 'caption';
+            caption.innerHTML = `<span class="fig-num">FIG ${index + 1}.</span><span class="desc">${photo.desc}</span>`;
             
-            const figNum = document.createElement('span');
-            figNum.className = 'fig-num';
-            figNum.innerText = "FIG " + (index + 1) + ".";
-
-            const desc = document.createElement('span');
-            desc.className = 'desc';
-            desc.innerText = photo.desc;
-
-            caption.appendChild(figNum);
-            caption.appendChild(desc);
-            item.appendChild(img);
-            item.appendChild(caption);
+            item.appendChild(img); item.appendChild(caption);
             galleryContainer.appendChild(item);
         });
 
@@ -317,15 +290,15 @@ layout: null
             document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
             window.scrollTo(0,0);
-            
             document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
             if(event && event.target.classList.contains('nav-item')) event.target.classList.add('active');
         }
 
         function openLightbox(src, desc) {
-            document.getElementById('lightbox').style.display = 'flex';
+            const box = document.getElementById('lightbox');
             document.getElementById('lightbox-img').src = src;
             document.getElementById('lightbox-caption').innerText = desc;
+            box.style.display = 'flex';
         }
         function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
         
@@ -333,6 +306,7 @@ layout: null
             const player = document.getElementById('audio-player');
             player.style.display = (player.style.display === 'block') ? 'none' : 'block';
         }
+
         document.addEventListener('keydown', e => { if (e.key === "Escape") closeLightbox(); });
     </script>
 </body>
