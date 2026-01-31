@@ -15,7 +15,7 @@ layout: null
 
     <meta property="og:type" content="book">
     <meta property="og:title" content="Cross and Swastika | Dr. Stephen Dietrich-Kolokouris">
-    <meta property="og:description" content="An unflinching look at the intersection of ancient faith and modern totalitarianism in the Balkans.">
+    <meta property="og:description" content="A forgotten war. A manipulated faith. The true history of the Orthodox Church and the SS.">
     <meta property="og:url" content="https://skdietrich.github.io/cross/">
     <meta property="og:site_name" content="Dr. Dietrich-Kolokouris Archives">
     <meta property="og:image" content="https://skdietrich.github.io/cross/images/cross_&_swastika_cover.png">
@@ -37,7 +37,7 @@ layout: null
       "url": "https://skdietrich.github.io/cross/",
       "image": "https://skdietrich.github.io/cross/images/cross_&_swastika_cover.png",
       "genre": ["History", "World War II", "Military History", "Religion"],
-      "keywords": "Waffen-SS, Orthodox Church, Balkans",
+      "keywords": "Waffen-SS, Orthodox Church, Balkans, Handschar",
       "offers": {
         "@type": "Offer",
         "price": "14.99", 
@@ -49,12 +49,13 @@ layout: null
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
 
     <style>
+        /* ==================== CORE STYLES ==================== */
         :root {
             --bg-dark: #121212;
-            --bg-panel: #1e1e1e;
+            --bg-panel: #1b1b1b;
             --gold-1: #bf953f; --gold-2: #fcf6ba; --gold-3: #b38728;
             --accent-red: #5e0b0b;
             --text-main: #e0e0e0;
@@ -72,6 +73,11 @@ layout: null
         .buy-btn { border: 1px solid var(--gold-1); padding: 10px 20px; color: var(--gold-1); text-decoration: none; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; transition: 0.3s; letter-spacing: 1px; }
         .buy-btn:hover { background-color: var(--gold-1); color: #000; }
 
+        /* BUTTONS */
+        .btn-group { display: flex; gap: 15px; margin-top: 20px; }
+        .listen-btn { border: 1px solid #555; background: transparent; color: #ccc; padding: 12px 24px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; cursor: pointer; transition: 0.3s; }
+        .listen-btn:hover { border-color: var(--gold-1); color: var(--gold-1); }
+
         /* HERO */
         .page-section { display: none; animation: fadeIn 0.6s ease-in-out; min-height: 85vh; padding-bottom: 50px; }
         .page-section.active { display: block; }
@@ -84,6 +90,21 @@ layout: null
 
         .book-layout { display: flex; max-width: 900px; margin: -60px auto 60px; background: var(--bg-panel); padding: 50px; border-left: 5px solid var(--accent-red); box-shadow: 0 20px 50px rgba(0,0,0,0.6); position: relative; gap: 50px; align-items: center; }
         .book-img { width: 300px; box-shadow: 10px 10px 30px rgba(0,0,0,0.8); transform: rotate(-2deg); border: 1px solid #333; }
+
+        /* RESEARCH & TIMELINE */
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        h2 { font-family: 'Cinzel', serif; color: var(--gold-1); border-bottom: 1px solid #333; padding-bottom: 15px; margin-top: 0; font-size: 2rem; }
+        p { line-height: 1.8; color: #d0d0d0; font-size: 1.1rem; margin-bottom: 20px; }
+        
+        .drop-cap::first-letter { font-family: 'Cinzel', serif; font-size: 4.5rem; float: left; line-height: 0.8; padding-right: 15px; color: var(--gold-1); text-shadow: 2px 2px 0px #000; }
+        .quote-box { background: #181818; padding: 40px; border-left: 4px solid var(--gold-1); margin: 50px 0; font-style: italic; color: #fff; font-family: 'Playfair Display', serif; font-size: 1.3rem; }
+
+        .timeline { position: relative; max-width: 800px; margin: 60px auto; }
+        .timeline::after { content: ''; position: absolute; width: 1px; background: #333; top: 0; bottom: 0; left: 20px; }
+        .timeline-item { position: relative; margin-bottom: 50px; padding-left: 60px; }
+        .timeline-dot { position: absolute; left: 14px; top: 5px; width: 13px; height: 13px; background: var(--bg-dark); border: 2px solid var(--gold-1); border-radius: 50%; z-index: 2; transition: 0.3s; }
+        .timeline-item:hover .timeline-dot { background: var(--gold-1); box-shadow: 0 0 15px var(--gold-1); }
+        .time-date { font-family: 'Cinzel'; color: var(--gold-1); font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; display: block; margin-bottom: 5px; }
 
         /* GALLERY & UTILS */
         .gallery-container-box { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
@@ -101,10 +122,8 @@ layout: null
         .close-btn { position: absolute; top: 20px; right: 40px; color: #fff; font-size: 60px; cursor: pointer; line-height: 0.5; }
         .close-btn:hover { color: var(--accent-red); }
 
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        h2 { font-family: 'Cinzel', serif; color: var(--gold-1); border-bottom: 1px solid #333; padding-bottom: 15px; margin-top: 0; font-size: 2rem; }
-        p { line-height: 1.8; color: #d0d0d0; font-size: 1.1rem; margin-bottom: 20px; }
-        .quote-box { background: #1e1e1e; padding: 30px; border-left: 4px solid var(--gold-1); margin: 40px 0; font-style: italic; color: #fff; }
+        .audio-modal { display: none; position: fixed; bottom: 30px; right: 30px; width: 350px; background: rgba(20, 20, 20, 0.95); border: 1px solid var(--gold-1); padding: 20px; z-index: 2000; backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(0,0,0,0.8); border-left: 4px solid var(--accent-red); animation: slideUp 0.5s ease; }
+        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
         @media (max-width: 768px) {
             .gold-text { font-size: 2.5rem; }
@@ -112,6 +131,7 @@ layout: null
             .nav-menu { display: none; }
             .nav-brand { margin: 0 auto; }
             .gallery-grid { grid-template-columns: 1fr; }
+            .btn-group { justify-content: center; }
         }
     </style>
 </head>
@@ -134,7 +154,7 @@ layout: null
             <div>
                 <h1 class="gold-text">CROSS & SWASTIKA</h1>
                 <p class="hero-sub">Orthodox Europe and the Waffen-SS</p>
-                <p style="color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;">
+                <p style="color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 20px;">
                     Dr. Stephen Dietrich-Kolokouris
                 </p>
             </div>
@@ -145,46 +165,77 @@ layout: null
             <div>
                 <h2 style="color: #e0e0e0; border: none; font-size: 1.8rem;">Between the Icon and the Iron</h2>
                 <p>
-                    An unflinching academic investigation into one of World War II's most complex contradictions. 
-                    How did the ancient faith of Byzantium intersect with the totalitarian machinery of the SS?
+                    A forgotten war. A manipulated faith. <em>Cross & Swastika</em> uncovers one of World War II's most controversial and suppressed histories—the recruitment of Orthodox Christian and Balkan volunteers into the Waffen-SS.
                 </p>
                 <p>
-                    From the Balkans to the Eastern Front, <em>Cross and Swastika</em> uncovers the uncomfortable history 
-                    that has been buried for decades.
+                    With chilling archival depth, this book explores how the Nazi regime used religious imagery and historical trauma to seduce communities into ideological service.
                 </p>
-                <br>
-                <a href="https://www.amazon.com/dp/B0FCRYXSST" class="buy-btn" style="background: var(--accent-red); border-color: var(--accent-red); color: white;">Purchase on Amazon</a>
+                <div class="btn-group">
+                    <a href="https://www.amazon.com/dp/B0FCRYXSST" class="buy-btn" style="background: var(--accent-red); border-color: var(--accent-red); color: white;">Purchase on Amazon</a>
+                    <button onclick="toggleAudio()" class="listen-btn">▶ Listen to Excerpt</button>
+                </div>
             </div>
         </div>
         
         <footer style="text-align: center; padding: 60px 20px; color: #555; font-size: 0.8rem; border-top: 1px solid #222;">
             <p style="color: #666;">AUTHOR OF: <br><em>The American Paranormal</em> &bull; <em>Chicago Ripper Crew Reboot</em></p>
-            <p>&copy; 2024 Stephen Dietrich-Kolokouris. All Rights Reserved.</p>
+            <p>&copy; 2026 Stephen Dietrich-Kolokouris. All Rights Reserved.</p>
         </footer>
     </div>
 
     <div id="research" class="page-section">
-        <div class="container" style="margin-top: 40px;">
+        <div class="container" style="margin-top: 60px;">
             <h2>The Historical Context</h2>
-            <p>
+            
+            <p class="drop-cap">
                 The 13th Waffen Mountain Division of the SS "Handschar" represents a singular moment in the history of the Second World War. 
                 While much has been written about the political maneuverings of the Grand Mufti of Jerusalem, the complex interplay between 
                 Orthodox Christian populations in the Balkans and the encroaching German war machine remains a subject of intense debate.
             </p>
+            
             <div class="quote-box">
-                "To understand the tragedy of the Balkans in the 1940s, one must first understand the collision of religious identity and political desperation..."
+                "Between oath and oblivion, there is only what we choose to record."
             </div>
-            <p>
-                This book utilizes primary source documents, never-before-translated recruitment pamphlets, and personal diaries to reconstruct 
-                the atmosphere of 1943-1945. It challenges the monolithic view of the SS, revealing a fragmented, opportunistic, and often contradictory organization 
-                operating in the cultural borderlands of Europe.
-            </p>
-            <p><strong>Key Primary Sources Examined:</strong></p>
-            <ul style="color: #ccc; line-height: 1.8; margin-bottom: 40px;">
-                <li>Divisional Recruitment Records (1943)</li>
-                <li>Orthodox Clergy correspondence from occupied Yugoslavia</li>
-                <li>German High Command (OKW) directives regarding religious accommodation</li>
-            </ul>
+
+            <div style="text-align: center; margin-top: 80px; margin-bottom: 40px;">
+                <h2 style="border: none; font-size: 1.5rem;">Chronology of Conflict</h2>
+                <p style="font-size: 0.9rem; color: #666;">Key events examined in the text</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="time-date">APRIL 1941</span>
+                    <div class="time-content">
+                        <strong>Invasion of Yugoslavia</strong><br>
+                        The Axis powers invade and partition the Kingdom of Yugoslavia. The "Independent State of Croatia" (NDH) is established, setting the stage for sectarian violence.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="time-date">FEBRUARY 1943</span>
+                    <div class="time-content">
+                        <strong>Formation of Handschar</strong><br>
+                        Hitler approves the formation of the 13th SS Division. Recruitment begins across Bosnia and Croatia, targeting specific religious demographics.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="time-date">SEPTEMBER 17, 1943</span>
+                    <div class="time-content">
+                        <strong>The Villefranche Mutiny</strong><br>
+                        While stationed in France, members of the division stage the only mutiny within the SS during the war, capturing the town of Villefranche-de-Rouergue before being suppressed.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="time-date">1944 - 1945</span>
+                    <div class="time-content">
+                        <strong>Retreat & Dissolution</strong><br>
+                        As the Red Army advances, the division retreats into the Reich. The fragile alliances between religious factions and the German command disintegrate.
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -192,7 +243,7 @@ layout: null
         <div class="gallery-container-box">
             <div style="text-align: center; max-width: 800px; margin: 0 auto;">
                 <h2 style="font-size: 2.5rem;">The Digital Archives</h2>
-                <p>Select historical maps, photographs, and documents referenced in the text. Click any item to inspect the details.</p>
+                <p>Select historical maps, photographs, and documents referenced in the text.</p>
             </div>
             <div class="gallery-grid" id="gallery-container"></div>
         </div>
@@ -202,6 +253,18 @@ layout: null
         <span class="close-btn">&times;</span>
         <img id="lightbox-img" src="">
         <p id="lightbox-caption" style="color: var(--gold-1); margin-top: 20px; font-family: 'Cinzel'; font-size: 1.2rem; letter-spacing: 1px;"></p>
+    </div>
+
+    <div id="audio-player" class="audio-modal">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span style="color: var(--gold-1); font-family: 'Cinzel'; font-size: 0.9rem;">AUDIO EXCERPT</span>
+            <span onclick="toggleAudio()" style="cursor: pointer; color: #fff;">&times;</span>
+        </div>
+        <p style="font-size: 0.8rem; color: #ccc; margin-bottom: 10px;">Introduction: A Forgotten War</p>
+        <audio controls style="width: 100%; height: 30px;">
+            <source src="audio/excerpt.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
     </div>
 
     <script>
@@ -265,6 +328,11 @@ layout: null
             document.getElementById('lightbox-caption').innerText = desc;
         }
         function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
+        
+        function toggleAudio() {
+            const player = document.getElementById('audio-player');
+            player.style.display = (player.style.display === 'block') ? 'none' : 'block';
+        }
         document.addEventListener('keydown', e => { if (e.key === "Escape") closeLightbox(); });
     </script>
 </body>
