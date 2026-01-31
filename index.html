@@ -232,7 +232,7 @@ layout: null
         <p id="lightbox-caption" style="color: var(--gold-1); margin-top: 20px; font-family: 'Cinzel'; font-size: 1.2rem;"></p>
     </div>
 
-   <div id="audio-player" class="audio-modal">
+  <div id="audio-player" class="audio-modal">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
             <span style="color: var(--gold-1); font-family: 'Cinzel'; font-size: 0.9rem;">AUDIO EXCERPT</span>
             <span onclick="toggleAudio()" style="cursor: pointer; color: #fff;">&times;</span>
@@ -241,8 +241,10 @@ layout: null
         
         <audio controls style="width: 100%; height: 30px;">
             <source src="audio/excerpt.mp3" type="audio/mpeg">
+            
+            <source src="audio/exerpt.mp3" type="audio/mpeg">
+            
             <source src="audio/excerpt.m4a" type="audio/mp4">
-            <source src="audio/Excerpt.mp3" type="audio/mpeg">
             
             Your browser does not support the audio element.
         </audio>
@@ -316,4 +318,5 @@ layout: null
     </script>
 </body>
 </html>
+
 
