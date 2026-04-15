@@ -320,6 +320,111 @@ layout: null
         .audio-sub { font-size: 0.72rem; color: var(--text-dim); margin-bottom: 12px; letter-spacing: 1px; }
         audio { width: 100%; height: 36px; }
 
+        /* ===== EXCERPTS ===== */
+        .excerpts-wrap { max-width: 860px; margin: 0 auto; padding: 0 30px 90px; }
+
+        .excerpt-block {
+            margin-bottom: 80px;
+            position: relative;
+        }
+        .excerpt-chapter {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 5px;
+            color: var(--red-accent);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .excerpt-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.2rem, 3vw, 1.7rem);
+            color: var(--gold-1);
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+        .excerpt-rule {
+            width: 50px; height: 2px;
+            background: linear-gradient(to right, var(--red-deep), var(--gold-3));
+            margin-bottom: 30px;
+        }
+        .excerpt-text {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.22rem;
+            line-height: 1.95;
+            color: #c8c8c8;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .excerpt-text::first-letter {
+            font-family: 'Cinzel', serif;
+            font-size: 4.5rem;
+            float: left;
+            line-height: 0.75;
+            padding-right: 16px;
+            padding-top: 6px;
+            color: var(--gold-1);
+            text-shadow: 2px 2px 0 #000;
+        }
+        .excerpt-text em { color: var(--gold-2); font-style: italic; }
+        .excerpt-text strong { color: #e8e8e8; font-weight: 600; }
+
+        .excerpt-continuation {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.22rem;
+            line-height: 1.95;
+            color: #c8c8c8;
+            margin-bottom: 20px;
+        }
+        .excerpt-continuation em { color: var(--gold-2); font-style: italic; }
+
+        .excerpt-pullout {
+            border-left: 3px solid var(--gold-1);
+            padding: 24px 32px;
+            margin: 40px 0;
+            background: rgba(191,149,63,0.04);
+        }
+        .excerpt-pullout p {
+            font-family: 'Crimson Pro', serif;
+            font-style: italic;
+            font-size: 1.35rem;
+            color: #fff;
+            line-height: 1.65;
+        }
+
+        .excerpt-cta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 36px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+        .excerpt-cta-text {
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            flex: 1;
+            min-width: 160px;
+        }
+
+        .excerpt-divider {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 60px 0;
+        }
+        .excerpt-divider-line { flex: 1; height: 1px; background: var(--border); }
+        .excerpt-divider-mark {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 4px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 900px) {
             .book-panel-inner { grid-template-columns: 1fr; }
@@ -356,6 +461,7 @@ layout: null
             <li><span class="active" onclick="showSection('home')">Home</span></li>
             <li><span onclick="showSection('research')">The Research</span></li>
             <li><span onclick="showSection('archives')">Archives</span></li>
+            <li><span onclick="showSection('excerpts')">Excerpts</span></li>
             <li><span onclick="showSection('author')">Author</span></li>
             <li><a href="https://www.amazon.com/dp/B0FCRYXSST" target="_blank" class="nav-buy">Buy Now</a></li>
         </ul>
@@ -661,6 +767,84 @@ layout: null
     </footer>
 </div>
 
+<!-- ===== EXCERPTS ===== -->
+<div id="excerpts" class="page-section">
+
+    <div class="section-header">
+        <div class="section-label">From the Text</div>
+        <h2 class="section-title">Read the Book</h2>
+        <p class="section-sub">Two passages. The moment the SS's Islamic experiment shattered — and what was left when the silence finally settled.</p>
+        <div class="section-rule"><div class="sr-line"></div><div class="sr-dot"></div><div class="sr-line"></div></div>
+    </div>
+
+    <div class="excerpts-wrap">
+
+        <!-- EXCERPT 1: VILLEFRANCHE -->
+        <div class="excerpt-block">
+            <div class="excerpt-chapter">Chapter 10 &nbsp;·&nbsp; Brotherhood of Blood</div>
+            <h3 class="excerpt-title">The Only Mutiny in the History of the Waffen&#8209;SS</h3>
+            <div class="excerpt-rule"></div>
+
+            <p class="excerpt-text">The cracks in the Handschar Division began not in Bosnia, where ethnic firestorms would later consume it, but in a quiet provincial town in southern France. Villefranche&#8209;de&#8209;Rouergue, nestled in the hills of the Aveyron region, had been chosen by the Waffen SS as a temporary training location, far from the Balkan front, where the discipline of the newly recruited Bosnian Muslims could be molded in isolation. It was here, on 17 September 1943, that the first — and only — open mutiny within the Waffen SS would erupt, led not by captured Slavs or disillusioned foreign conscripts, but by the very volunteers Himmler had once praised as <em>"the bridge between Europe and Islam."</em></p>
+
+            <p class="excerpt-continuation">The mutiny was swift, calculated, and blood-soaked. In the predawn hours, a group of Bosnian Muslim recruits attacked their German officers, slitting throats and seizing weapons from armories while the rest of the town slept. Their objective was not merely to escape, but to inspire a general revolt, seize transportation routes, and link up with French resistance forces. They had been trained to fight against communists and Serbs, but here, thousands of kilometers from home, they had come to believe they had been betrayed — used, humiliated, and discarded by the Reich. Their rebellion was desperate, but deliberate.</p>
+
+            <p class="excerpt-continuation">French residents awoke to the echo of gunfire and confusion. Some Handschar mutineers barricaded buildings; others distributed captured weapons among themselves. German SS command, initially paralyzed, responded by calling in reinforcements from nearby regiments. The mutineers were surrounded by noon. By dusk, it was over. Most were dead. Some were executed on the spot. <strong>A few survived, hidden by sympathetic French civilians, later joining the Maquis and fighting against the Germans in the Pyrenees.</strong> The rest vanished into silence.</p>
+
+            <div class="excerpt-pullout">
+                <p>Berlin was stunned. Himmler had placed great symbolic value on the Handschar Division. It was his proof that Islam and National Socialism could be fused, that racial loyalty was secondary to spiritual obedience. The mutiny in Villefranche was more than a military embarrassment — it was an ideological betrayal. In internal SS memoranda, the incident was referred to as a <em>"failure of religious integration"</em> and <em>"a breach of racial alignment."</em> The dream of a disciplined Islamic legion had faltered in the face of reality.</p>
+            </div>
+
+            <p class="excerpt-continuation">In one instance, a soldier who had requested time to perform morning prayer was publicly flogged. The men were told they would return home as liberators; instead, they were sent westward, paraded before locals who viewed them as foreign mercenaries in service of tyranny. Some began to doubt whether they were soldiers of Islam or puppets of a dying empire.</p>
+
+            <p class="excerpt-continuation">And yet, even as it collapsed, the mutiny at Villefranche became legend. Among the French resistance, it was romanticized as the <em>"Muslim revolt against Hitler."</em> In Bosnia, it was largely forgotten — buried under layers of fear, denial, and the need for postwar reconstruction. Only decades later would plaques appear in Villefranche&#8209;de&#8209;Rouergue, quietly commemorating the men who had dared to strike against their masters. They were not saints. They were not saviors. But they were the only men in the entire history of the Waffen SS who said no — and meant it with blood.</p>
+
+            <div class="excerpt-cta">
+                <span class="excerpt-cta-text">Continue reading in the full book</span>
+                <a href="https://www.amazon.com/dp/B0FCRYXSST" target="_blank" class="btn-primary">Purchase on Amazon</a>
+            </div>
+        </div>
+
+        <!-- DIVIDER -->
+        <div class="excerpt-divider">
+            <div class="excerpt-divider-line"></div>
+            <div class="excerpt-divider-mark">Epilogue</div>
+            <div class="excerpt-divider-line"></div>
+        </div>
+
+        <!-- EXCERPT 2: EPILOGUE -->
+        <div class="excerpt-block">
+            <div class="excerpt-chapter">Epilogue</div>
+            <h3 class="excerpt-title">Between Oath and Oblivion</h3>
+            <div class="excerpt-rule"></div>
+
+            <p class="excerpt-text">The Waffen SS never truly belonged in the Balkans. It came as an occupier, cloaked in uniform and ideology, preaching unity while practicing annihilation. Its foreign volunteers — Muslim, Orthodox, Catholic, Protestant, ethnic German, Slavic, Albanian — were recruited from desperation, from vengeance, from conviction, or from simple hunger. They were soldiers, yes, but also symbols — distorted reflections of a Europe that had lost its bearings, its borders, and its memory. They took an oath, not to a nation, but to an abstraction. And when that abstraction fell, it pulled their histories into oblivion with it.</p>
+
+            <p class="excerpt-continuation">For decades, their story was either silenced or distorted. In the East, they were condemned without trial; in the West, they were sanitized without truth. In the Balkans themselves, the ground where they fought and bled became a contested graveyard — where Partisan monuments stood over mass graves that neither side would claim. The few who survived spoke little. The many who did not were spoken for — by ideologues, by historians, by descendants who often remembered what they were told, not what was true.</p>
+
+            <div class="excerpt-pullout">
+                <p>What remains today are fragments. Fragments of uniforms in basements. Photographs buried in family trunks. Names mispronounced at reunions. Flags flown by those too young to know who once carried them. And silence — always, silence. The kind that lingers in churches that once blessed bayonets. In mosques whose domes echoed with gunfire. <em>In towns where no one speaks of the war, but everyone knows which boots they wore.</em></p>
+            </div>
+
+            <p class="excerpt-continuation">To write about the foreign volunteers of the Waffen SS in the Balkans is to trespass across lines drawn by trauma, by pride, and by denial. It is to confront uncomfortable questions: What drives a man to fight for a cause that denies his very blood? What does loyalty mean when its reward is betrayal? Can memory be just, or only honest?</p>
+
+            <p class="excerpt-continuation">There are no monuments to these men. Only archives, blurred photographs, and conflicting testimonies. They are remembered not for what they were, but for what others needed them to be — martyrs, monsters, patriots, pawns.</p>
+
+            <p class="excerpt-continuation" style="color: #e0e0e0; font-size: 1.3rem; font-style: italic; text-align: center; padding: 20px 0;">Between oath and oblivion, they marched.<br>And there, still, they remain.</p>
+
+            <div class="excerpt-cta">
+                <span class="excerpt-cta-text">300 pages. 14 chapters. One forgotten war.</span>
+                <a href="https://www.amazon.com/dp/B0FCRYXSST" target="_blank" class="btn-primary">Purchase on Amazon</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-copy">&copy; 2026 Stephen Dietrich&#8209;Kolokouris. All Rights Reserved.</div>
+    </footer>
+</div><!-- /excerpts -->
+
 <!-- ===== AUTHOR ===== -->
 <div id="author" class="page-section">
     <div class="section-header">
@@ -748,7 +932,7 @@ layout: null
         document.getElementById(id).classList.add('active');
         window.scrollTo({ top: 0, behavior: 'smooth' });
         document.querySelectorAll('.nav-links span').forEach(el => el.classList.remove('active'));
-        const map = { home: 0, research: 1, archives: 2, author: 3 };
+        const map = { home: 0, research: 1, archives: 2, excerpts: 3, author: 4 };
         const items = document.querySelectorAll('.nav-links span');
         if (map[id] !== undefined && items[map[id]]) items[map[id]].classList.add('active');
         document.getElementById('navLinks').classList.remove('open');
