@@ -311,14 +311,43 @@ layout: null
         .lb-close:hover { opacity: 1; }
 
         /* ===== AUDIO ===== */
-        .audio-modal { display: none; position: fixed; bottom: 28px; right: 28px; width: 350px; background: rgba(17,17,17,0.98); border: 1px solid var(--gold-3); border-left: 3px solid var(--red-deep); padding: 20px 22px; z-index: 2000; backdrop-filter: blur(12px); box-shadow: 0 20px 60px rgba(0,0,0,0.8); animation: slideUp 0.4s ease both; }
+        .audio-modal { display: none; position: fixed; bottom: 28px; right: 28px; width: 370px; background: rgba(12,12,12,0.99); border: 1px solid var(--gold-1); border-left: 4px solid var(--red-deep); padding: 22px 24px; z-index: 2000; backdrop-filter: blur(16px); box-shadow: 0 0 0 1px rgba(191,149,63,0.1), 0 24px 70px rgba(0,0,0,0.95); animation: slideUp 0.4s ease both; }
         @keyframes slideUp { from{transform:translateY(30px);opacity:0} to{transform:translateY(0);opacity:1} }
-        .audio-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
-        .audio-label { font-family: 'Cinzel', serif; font-size: 0.7rem; color: var(--gold-1); letter-spacing: 2px; }
-        .audio-close { cursor: pointer; color: var(--text-muted); font-size: 1.2rem; line-height: 1; transition: color 0.2s; }
+        .audio-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+        .audio-label { font-family: 'Cinzel', serif; font-size: 0.72rem; color: var(--gold-1); letter-spacing: 3px; text-transform: uppercase; }
+        .audio-close { cursor: pointer; color: var(--text-muted); font-size: 1.3rem; line-height: 1; transition: color 0.2s; }
         .audio-close:hover { color: #fff; }
-        .audio-sub { font-size: 0.72rem; color: var(--text-dim); margin-bottom: 12px; letter-spacing: 1px; }
-        audio { width: 100%; height: 36px; }
+        .audio-track { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+        .audio-track:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        .audio-track-label { font-family: 'Cinzel', serif; font-size: 0.62rem; color: var(--gold-3); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+        .audio-track-title { font-size: 0.78rem; color: #ccc; margin-bottom: 10px; font-style: italic; font-family: 'Crimson Pro', serif; }
+        audio { width: 100%; height: 34px; }
+
+        /* Inline listen button on excerpts page */
+        .excerpt-listen-bar {
+            display: flex; align-items: center; gap: 16px;
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--gold-1);
+            padding: 14px 20px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .excerpt-listen-bar:hover { border-color: var(--gold-1); background: rgba(191,149,63,0.05); }
+        .listen-play-icon {
+            width: 36px; height: 36px;
+            border: 1px solid var(--gold-1);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold-1); font-size: 0.9rem;
+            flex-shrink: 0;
+            transition: background 0.2s;
+        }
+        .excerpt-listen-bar:hover .listen-play-icon { background: var(--gold-1); color: #000; }
+        .listen-bar-text {}
+        .listen-bar-top { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 3px; color: var(--gold-1); text-transform: uppercase; margin-bottom: 2px; }
+        .listen-bar-sub { font-size: 0.75rem; color: var(--text-muted); font-style: italic; font-family: 'Crimson Pro', serif; }
 
         /* ===== EXCERPTS ===== */
         .excerpts-wrap { max-width: 860px; margin: 0 auto; padding: 0 30px 90px; }
@@ -785,6 +814,14 @@ layout: null
             <h3 class="excerpt-title">The Only Mutiny in the History of the Waffen&#8209;SS</h3>
             <div class="excerpt-rule"></div>
 
+            <div class="excerpt-listen-bar" onclick="openAudio('audio1')">
+                <div class="listen-play-icon">&#9654;</div>
+                <div class="listen-bar-text">
+                    <div class="listen-bar-top">&#9836; Listen to this excerpt</div>
+                    <div class="listen-bar-sub">Read aloud — Chapter 10: The Villefranche Mutiny</div>
+                </div>
+            </div>
+
             <p class="excerpt-text">The cracks in the Handschar Division began not in Bosnia, where ethnic firestorms would later consume it, but in a quiet provincial town in southern France. Villefranche&#8209;de&#8209;Rouergue, nestled in the hills of the Aveyron region, had been chosen by the Waffen SS as a temporary training location, far from the Balkan front, where the discipline of the newly recruited Bosnian Muslims could be molded in isolation. It was here, on 17 September 1943, that the first — and only — open mutiny within the Waffen SS would erupt, led not by captured Slavs or disillusioned foreign conscripts, but by the very volunteers Himmler had once praised as <em>"the bridge between Europe and Islam."</em></p>
 
             <p class="excerpt-continuation">The mutiny was swift, calculated, and blood-soaked. In the predawn hours, a group of Bosnian Muslim recruits attacked their German officers, slitting throats and seizing weapons from armories while the rest of the town slept. Their objective was not merely to escape, but to inspire a general revolt, seize transportation routes, and link up with French resistance forces. They had been trained to fight against communists and Serbs, but here, thousands of kilometers from home, they had come to believe they had been betrayed — used, humiliated, and discarded by the Reich. Their rebellion was desperate, but deliberate.</p>
@@ -818,6 +855,14 @@ layout: null
             <h3 class="excerpt-title">Between Oath and Oblivion</h3>
             <div class="excerpt-rule"></div>
 
+            <div class="excerpt-listen-bar" onclick="openAudio('audio2')">
+                <div class="listen-play-icon">&#9654;</div>
+                <div class="listen-bar-text">
+                    <div class="listen-bar-top">&#9836; Listen to this excerpt</div>
+                    <div class="listen-bar-sub">Read aloud — Epilogue: Between Oath and Oblivion</div>
+                </div>
+            </div>
+
             <p class="excerpt-text">The Waffen SS never truly belonged in the Balkans. It came as an occupier, cloaked in uniform and ideology, preaching unity while practicing annihilation. Its foreign volunteers — Muslim, Orthodox, Catholic, Protestant, ethnic German, Slavic, Albanian — were recruited from desperation, from vengeance, from conviction, or from simple hunger. They were soldiers, yes, but also symbols — distorted reflections of a Europe that had lost its bearings, its borders, and its memory. They took an oath, not to a nation, but to an abstraction. And when that abstraction fell, it pulled their histories into oblivion with it.</p>
 
             <p class="excerpt-continuation">For decades, their story was either silenced or distorted. In the East, they were condemned without trial; in the West, they were sanitized without truth. In the Balkans themselves, the ground where they fought and bled became a contested graveyard — where Partisan monuments stood over mass graves that neither side would claim. The few who survived spoke little. The many who did not were spoken for — by ideologues, by historians, by descendants who often remembered what they were told, not what was true.</p>
@@ -834,6 +879,45 @@ layout: null
 
             <div class="excerpt-cta">
                 <span class="excerpt-cta-text">300 pages. 14 chapters. One forgotten war.</span>
+                <a href="https://www.amazon.com/dp/B0FCRYXSST" target="_blank" class="btn-primary">Purchase on Amazon</a>
+            </div>
+        </div>
+
+        <!-- DIVIDER -->
+        <div class="excerpt-divider">
+            <div class="excerpt-divider-line"></div>
+            <div class="excerpt-divider-mark">Chapter 7</div>
+            <div class="excerpt-divider-line"></div>
+        </div>
+
+        <!-- EXCERPT 3: THE GREEK TRAGEDY -->
+        <div class="excerpt-block">
+            <div class="excerpt-chapter">Chapter 7 &nbsp;·&nbsp; The Greek Tragedy</div>
+            <h3 class="excerpt-title">The Hellenic Myth: Nazis and the Nordic Greeks</h3>
+            <div class="excerpt-rule"></div>
+
+            <div class="excerpt-listen-bar" onclick="openAudio('audio3')">
+                <div class="listen-play-icon">&#9654;</div>
+                <div class="listen-bar-text">
+                    <div class="listen-bar-top">&#9836; Listen to this excerpt</div>
+                    <div class="listen-bar-sub">Read aloud — Chapter 7: SS Recruitment, Sabotage, and Silence</div>
+                </div>
+            </div>
+
+            <p class="excerpt-text">Of all the failed dreams of Himmler's multiethnic Waffen SS, few were as short-lived — and as thoroughly erased from public memory — as the attempt to raise a Greek division under SS command. Conceived in Berlin in the spring of 1944, the plan to form a fully Hellenic unit of the Waffen SS was a last-minute project born from desperation, ideology, and regional ambition. It was also violently and effectively destroyed before it could materialize, leaving behind only fragments in classified cables, destroyed buildings, and whispered names.</p>
+
+            <p class="excerpt-continuation">The plan envisioned an eventual Greek SS division of 8,000 to 10,000 men, modeled after the Handschar and Skanderbeg formations but infused with Greek cultural symbolism — Orthodox chaplains, blue-and-white insignia, and references to Leonidas, Alexander, and Byzantium. Greek-language posters bore slogans such as <em>"Against Bolshevism — For Greece, For Europe!"</em> The proposed division was referred to in propaganda as the <em>"Waffenverband Hellas."</em></p>
+
+            <div class="excerpt-pullout">
+                <p>It ended not with a military failure, but with a muffled explosion behind a tiled wall on a street in Piraeus. The Hellenic Waffen SS division was never defeated in the field. It was destroyed <em>in utero</em> — by sabotage, infiltration, and a campaign of surgical partisan violence that was, in its quiet efficacy, a model of resistance warfare. The Germans would later call it <em>"Operation Broken Column."</em> The British would refer to it as <em>"the finest act of preventative insurgency in the southern theatre."</em> The Greeks never gave it a name. But they remembered it.</p>
+            </div>
+
+            <p class="excerpt-continuation">On June 17, ELAS operatives disguised as postal workers entered the German consular annex in Thessaloniki and planted an explosive in a filing cabinet. The blast destroyed nearly 80% of registrant paperwork and killed two SS clerks. The climax came on June 29 in Piraeus — SS-Obersturmführer Karl Friedenthal, who had overseen recruitment policy for the Athens district, was killed instantly by a bomb hidden in a light fixture. <strong>The files were gone. The registries, the photographs, the interview notes — all incinerated or vanished.</strong></p>
+
+            <p class="excerpt-continuation">Himmler's response was scathing. An intercepted communiqué declared: <em>"Greek enthusiasm is hollow. The sabotage of our effort to raise a Hellenic division is a coordinated act of betrayal from a nation we mistakenly assumed would be grateful."</em> SS-Hauptamt rescinded its directive on July 12, 1944. The failure was quietly buried. It appeared in no textbooks, no documentaries. But in the archives — where names are blacked out and file numbers lost — there is still the shadow of a division that never was.</p>
+
+            <div class="excerpt-cta">
+                <span class="excerpt-cta-text">The full chapter reconstructs every operation</span>
                 <a href="https://www.amazon.com/dp/B0FCRYXSST" target="_blank" class="btn-primary">Purchase on Amazon</a>
             </div>
         </div>
@@ -916,14 +1000,30 @@ layout: null
 <!-- ===== AUDIO ===== -->
 <div id="audio-player" class="audio-modal">
     <div class="audio-header">
-        <span class="audio-label">&#9654; Audio Excerpt</span>
-        <span class="audio-close" onclick="toggleAudio()">&times;</span>
+        <span class="audio-label">&#9654; Audio Excerpts</span>
+        <span class="audio-close" onclick="closeAudio()">&times;</span>
     </div>
-    <p class="audio-sub">Reading from Chapter 1: The Invasion</p>
-    <audio controls>
-        <source src="{{ site.baseurl }}/audio/excerpt.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+    <div class="audio-track">
+        <div class="audio-track-label">Chapter 1</div>
+        <div class="audio-track-title">Himmler's Balkan Dream</div>
+        <audio id="audio1" controls>
+            <source src="{{ site.baseurl }}/audio/excerpt.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <div class="audio-track">
+        <div class="audio-track-label">Chapter 1</div>
+        <div class="audio-track-title">The Hellenic Myth: Nazis and the Nordic Greeks</div>
+        <audio id="audio3" controls>
+            <source src="{{ site.baseurl }}/audio/excerpt3.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <div class="audio-track">
+        <div class="audio-track-label">Epilogue</div>
+        <div class="audio-track-title">Between Oath and Oblivion</div>
+        <audio id="audio2" controls>
+            <source src="{{ site.baseurl }}/audio/excerpt2.mp3" type="audio/mpeg">
+        </audio>
+    </div>
 </div>
 
 <script>
@@ -956,10 +1056,27 @@ layout: null
             item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
         });
     }
-    function toggleAudio() {
+    function openAudio(trackId) {
         const p = document.getElementById('audio-player');
-        p.style.display = (p.style.display === 'block') ? 'none' : 'block';
+        p.style.display = 'block';
+        if (trackId) {
+            // pause both, then play the requested one
+            ['audio1','audio2','audio3'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.pause();
+            });
+            const target = document.getElementById(trackId);
+            if (target) { target.currentTime = 0; target.play(); }
+        }
     }
+    function closeAudio() {
+        document.getElementById('audio-player').style.display = 'none';
+        ['audio1','audio2','audio3'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.pause();
+        });
+    }
+    function toggleAudio() { openAudio(null); }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
